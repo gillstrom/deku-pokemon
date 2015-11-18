@@ -1,0 +1,69 @@
+{
+  "name": "deku-pokemon",
+  "version": "0.0.0",
+  "description": "Pokemon component for deku",
+  "license": "MIT",
+  "repository": "gillstrom/deku-pokemon",
+  "author": {
+    "name": "Andreas Gillström",
+    "email": "andreasgillstrom@gmail.com",
+    "url": "github.com/gillstrom"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "build": "browserify example/index.js -o example/build.js -dv",
+    "prepublish": "babel index.js --out-file dist.js",
+    "test": "xo index.js && ava"
+  },
+  "main": "dist.js",
+  "files": [
+    "dist.js"
+  ],
+  "keywords": [
+    "component",
+    "deku",
+    "dekujs",
+    "pokemon"
+  ],
+  "dependencies": {
+    "magic-virtual-element": "^1.0.6"
+  },
+  "devDependencies": {
+    "assert-element": "^0.3.1",
+    "ava": "*",
+    "babel": "^5.8.23",
+    "babel-eslint": "^4.1.1",
+    "babelify": "^6.3.0",
+    "browserify": "^11.2.0",
+    "component-mock": "0.0.2",
+    "deku": "^0.5.6",
+    "eslint-config-xo-react": "^0.3.0",
+    "eslint-plugin-react": "^3.3.1",
+    "xo": "*"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "xo": {
+    "envs": [
+      "browser"
+    ],
+    "esnext": true,
+    "extends": [
+      "xo-react"
+    ],
+    "rules": {
+      "jsx-quotes": [
+        2,
+        "prefer-single"
+      ],
+      "react/no-unknown-property": 0,
+      "react/prop-types": 0,
+      "quote-props": 0
+    }
+  }
+}
