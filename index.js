@@ -12,7 +12,7 @@ const propTypes = {
 
 function render({props}) {
 	const {name} = props;
-	return <img class={['Pokemon', props.class]} src={`http://img.pokemondb.net/artwork/${name.toLowerCase()}.jpg`} alt={name}/>;
+	return <img class={['Pokemon', props.class]} src={`http://img.pokemondb.net/artwork/${name.trim().toLowerCase()}.jpg`} alt={name}/>;
 }
 
 export default {propTypes, render};
