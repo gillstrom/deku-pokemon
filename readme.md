@@ -5,8 +5,14 @@
 
 ## Install
 
+With Deku > 2
 ```
 $ npm install --save deku-pokemon
+```
+
+With Deku < 2
+```
+$ npm install --save deku-pokemon@1.0.1
 ```
 
 

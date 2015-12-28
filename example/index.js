@@ -1,29 +1,11 @@
-/** @jsx dom */
-import dom from 'magic-virtual-element';
-import {render, tree} from 'deku';
+/** @jsx element */
+import deku from 'deku';
 import Pokemon from '../';
 
-function initialState() {
-	return {
-		name: 'Pikachu'
-	};
-}
-
-function rndr({state}, setState) {
-	const {name} = state;
-
-	return (
-		<div>
-			<input type='text' value='Pikachu' onKeyUp={e => setState({name: e.target.value})}/>
-			<br/>
-			<Pokemon name={name}/>
-		</div>
-	);
-}
-
+const {dom, element} = deku;
+const render = dom.createRenderer(document.body);
 const App = {
-	initialState,
-	render: rndr
+	render: () => <Pokemon class='Test' name='pikachu'/>
 };
 
-render(tree(<App/>), document.body);
+render(<App/>);

@@ -3,7 +3,7 @@ import componentMock from 'component-mock';
 import test from 'ava';
 import Pokemon from './';
 
-test('Pokemon', t => {
+test('Pokemon', () => {
 	const mock = componentMock(Pokemon);
 	const el = mock.render({props: {
 		class: 'TestClass',
@@ -15,6 +15,4 @@ test('Pokemon', t => {
 	assertElement.hasClass(el, 'TestClass');
 	assertElement.hasAttribute(el, 'alt', 'Pikachu');
 	assertElement.hasAttribute(el, 'src', 'http://img.pokemondb.net/artwork/pikachu.jpg');
-
-	t.end();
 });

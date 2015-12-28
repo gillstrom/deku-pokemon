@@ -1,6 +1,8 @@
-/** @jsx dom */
-import dom from 'magic-virtual-element';
+/** @jsx element */
+import classnames from 'classnames';
+import deku from 'deku';
 
+const {element} = deku;
 const propTypes = {
 	class: {
 		type: 'string'
@@ -11,8 +13,7 @@ const propTypes = {
 };
 
 function render({props}) {
-	const {name} = props;
-	return <img class={['Pokemon', props.class]} src={`http://img.pokemondb.net/artwork/${name.trim().toLowerCase()}.jpg`} alt={name}/>;
+	return <img class={classnames('Pokemon', props.class)} src={`http://img.pokemondb.net/artwork/${props.name.trim().toLowerCase()}.jpg`} alt={props.name}/>;
 }
 
 export default {propTypes, render};
